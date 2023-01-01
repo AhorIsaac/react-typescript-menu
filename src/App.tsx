@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import React, { useState } from "react";
+import React, { useState, FC, ReactElement } from "react";
 import Menu from "./Menu";
 import Categories from "./Categories";
 import items from "./data";
@@ -7,7 +7,7 @@ import { MenuProps } from "./App.types";
 
 const allCategories = ["all", ...new Set(items.map((item) => item.category))];
 
-const App = () => {
+const App: FC = (): ReactElement => {
   const [menuItems, setMenuItems] = useState<MenuProps[]>(items);
   const [categories, setCategories] = useState<Array<string>>(allCategories);
 

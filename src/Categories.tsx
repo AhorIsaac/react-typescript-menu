@@ -1,7 +1,10 @@
-import React from "react";
+import React, { FC, ReactElement } from "react";
 import { CategoriesComponentProps } from "./App.types";
 
-const Categories = ({ categories, filterItems }: CategoriesComponentProps) => {
+const Categories: FC<CategoriesComponentProps> = ({
+  categories,
+  filterItems,
+}: CategoriesComponentProps): ReactElement => {
   return (
     <div className="btn-container">
       {categories.map((category, index) => {
@@ -9,7 +12,7 @@ const Categories = ({ categories, filterItems }: CategoriesComponentProps) => {
           <button
             key={index}
             type="button"
-            className="filter-btn"
+            className="button-33"
             onClick={() => filterItems(category)}
           >
             {category}
